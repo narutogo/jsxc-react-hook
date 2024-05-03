@@ -6,9 +6,12 @@ export default function Sel() {
    const [sel, setsel] = useState(false);
 
     return (
-        <div>
+        <div className={"divContainer"} style={{
+          width: 400, height: 400, borderStyle: 'dotted'
+        }
+        }>
 
-         {sel && <Jsxc boshUrl = 'https://localhost:5443/bosh'
+         {sel && <Jsxc boshUrl = 'https://localhost:5443/bosh' fullscreen={true}
          id= 'user1@localhost' pw='987654'
          rosterAppend = 'roster' dialogAppend = 'dialog' windowListAppend = 'windowList'
           />}

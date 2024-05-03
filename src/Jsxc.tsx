@@ -6,6 +6,10 @@ export interface JsxcProp {
   boshUrl: string;
   id: string;
   pw: string;
+  marginTop: string;
+  marginLeft: string;
+  marginBottom: string;
+  marginRight : string;
   fullscreen?: boolean;
   jqueryUrl?: string;
   rosterAppend?: string;
@@ -14,7 +18,20 @@ export interface JsxcProp {
 }
 
 export default function Jsxc(prop: JsxcProp) {
-    const {fullscreen = false, jqueryUrl = 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js', rosterAppend = 'body', windowListAppend = 'body', dialogAppend = 'body', boshUrl, id, pw} = prop;
+    const {
+      fullscreen = false,
+      jqueryUrl = 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js',
+      rosterAppend = 'body',
+      windowListAppend = 'body',
+      dialogAppend = 'body',
+      marginTop = '40px',
+      marginLeft = '40px',
+      marginBottom = '40px',
+      marginRight = '40px',
+      boshUrl,
+      id,
+      pw
+    } = prop;
     useEffect(()=>{
 
         if ((window as any).jsxc) {
@@ -32,6 +49,12 @@ export default function Jsxc(prop: JsxcProp) {
         script.type = 'text/javascript';
         script.src = '/jsxc.bundle.js';
         document.head.appendChild(script);
+
+        const root = document.documentElement;
+        root.style.setProperty('--jsxc-margin-top', marginTop);
+        root.style.setProperty('--jsxc-margin-left', marginLeft);
+        root.style.setProperty('--jsxc-margin-bottom', marginBottom);
+        root.style.setProperty('--jsxc-margin-right', marginRight);
 
 
         script.onload = ()=> { localStorage.removeItem('jsxc2:accounts'); // for fobidden show 'account has ..' error message;
@@ -56,10 +79,10 @@ export default function Jsxc(prop: JsxcProp) {
 
     return (
       //  <Keepalive>
-            <div id='jsxc-containers'  >
-                <div id={rosterAppend}></div>
-                <div id={dialogAppend}></div>
-                <div id={windowListAppend}></div>
+            <div id='jsxc-containers' style={{width: '100%', height: '100%'}} >
+                <div  style={{width: '100%', height: '100%'}} id={rosterAppend}></div>
+                <div  style={{width: '100%', height: '100%'}} id={dialogAppend}></div>
+                <div  style={{width: '100%', height: '100%'}} id={windowListAppend}></div>
             </div>
     //    </Keepalive>
     );
