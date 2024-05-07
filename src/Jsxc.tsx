@@ -6,10 +6,10 @@ export interface JsxcProp {
   boshUrl: string;
   id: string;
   pw: string;
-  marginTop: string;
-  marginLeft: string;
-  marginBottom: string;
-  marginRight : string;
+  marginTop?: string;
+  marginLeft?: string;
+  marginBottom?: string;
+  marginRight?: string;
   fullscreen?: boolean;
   jqueryUrl?: string;
   rosterAppend?: string;
@@ -17,7 +17,7 @@ export interface JsxcProp {
   dialogAppend?: string;
 }
 
-export default function Jsxc(prop: JsxcProp) {
+export  function Jsxc(prop: JsxcProp) {
     const {
       fullscreen = false,
       jqueryUrl = 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js',
