@@ -12,18 +12,15 @@ export interface JsxcProp {
   marginRight?: string;
   fullscreen?: boolean;
   jqueryUrl?: string;
-  rosterAppend?: string;
-  windowListAppend?: string;
-  dialogAppend?: string;
 }
 
 export  function Jsxc(prop: JsxcProp) {
+    const rosterAppend = 'roster-append';
+    const windowListAppend = 'windowlist-append';
+    const dialogAppend = 'dialog-append';
     const {
       fullscreen = false,
       jqueryUrl = 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js',
-      rosterAppend = 'body',
-      windowListAppend = 'body',
-      dialogAppend = 'body',
       marginTop = '40px',
       marginLeft = '40px',
       marginBottom = '40px',

@@ -1,9 +1,9 @@
 {
   "name": "jsxc-react-hook",
-  "private": true,
+  "private": false,
   "main": "./dist/jsxc-react-hook.js",
   "description": " This is a react function version for JSXC. So you can use it in react application.",
-  "keywords": "jsxc xmpp",
+  "keywords": "jsxc xmpp react-hooks ",
   "version": "0.0.0",
   "respository": "https://github.com/narutogo/jsxc-react-hook",
   "type": "module",
