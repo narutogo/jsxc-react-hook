@@ -11,9 +11,9 @@ export default function Sel() {
         }
         }>
 
-        
+
          {sel && <Jsxc boshUrl = 'https://localhost:5443/bosh' fullscreen={true}
-         id= 'user1@localhost' pw='987654'
+         id= 'user1@localhost' pw='987654' showMenu={false}
           />}
 
         {!sel && <div>hellow world</div> }

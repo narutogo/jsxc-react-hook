@@ -20,8 +20,17 @@
       marginRight?: string; (defalut is 40px)
       fullscreen?: boolean; (defalut is false)
       jqueryUrl?: string;
+      showMenu: "yes"|"no" (use boolean has bug in create-react-app)
 
   ```
+## api
+### origin api
+  can use jsxc native api in (windows as any).XX
+### new api
+  expose JID class.
+  add new ap method
+  ``` directOpenChatWindow(string jid) ```
+  it can open a chat window even the contact is not in roster list.
 
 ## script
 - npm run dev: it will run a demo.
