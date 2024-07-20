@@ -16,6 +16,9 @@ export interface JsxcProp {
   fullscreen?: boolean;
   jqueryUrl?: string;
   showMenu: "yes"|"no";
+  showAudioButton: "yes"|"no";
+  showVideoButton: "yes"|"no";
+  showOfflineButton: "yes"|"no";
 }
 
 export async function directOpenChatWindow(jid: string) {
@@ -33,7 +36,6 @@ export  function Jsxc(prop: JsxcProp) {
     const windowListAppend = 'windowlist-append';
     const dialogAppend = 'dialog-append';
     const {
-
       jqueryUrl = 'https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.js',
       marginTop = '40px',
       marginLeft = '40px',
@@ -44,7 +46,10 @@ export  function Jsxc(prop: JsxcProp) {
       fullscreen,
       boshUrl,
       id,
-      pw
+      pw,
+      showAudioButton,
+      showVideoButton,
+      showOfflineButton,
     } = prop;
 
     userJid = id;
@@ -75,9 +80,6 @@ export  function Jsxc(prop: JsxcProp) {
         root.style.setProperty('--jsxc-margin-bottom', marginBottom);
         root.style.setProperty('--jsxc-margin-right', marginRight);
 
-
-
-
         script.onload = ()=> { localStorage.removeItem('jsxc2:accounts'); // for fobidden show 'account has ..' error message;
         let jsx = new (window as any).JSXC({
           /*  loadConnectionOptions: function(username: any, password: any) {
@@ -91,18 +93,25 @@ export  function Jsxc(prop: JsxcProp) {
             rosterAppend: '#' + rosterAppend,
             dialogAppend: '#' + dialogAppend,
             windowListAppend: '#' + windowListAppend,
+            lang: 'zh'
         });
         (window as any).jsxc = jsx;
         jsx.start(boshUrl, id, pw);}
 
-        if (showMenu === 'yes') {
+        if (showMenu === 'no') {
           root.style.setProperty('--jsxc-show-menu', 'none');
-          console.log('not show jsxc menu')
         }
-
-
+        if (showAudioButton === 'no') {
+          root.style.setProperty('--jsxc-show-audio-button', 'none');
+        }
+        if (showVideoButton === 'no') {
+          root.style.setProperty('--jsxc-show-video-button', 'none');
+        }
+        if (showOfflineButton === 'no') {
+          root.style.setProperty('--jsxc-show-offline-button', 'none');
+        }
+        
     },[]);
-
 
     return (
       //  <Keepalive>

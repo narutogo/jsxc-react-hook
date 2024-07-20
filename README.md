@@ -20,7 +20,10 @@
       marginRight?: string; (defalut is 40px)
       fullscreen?: boolean; (defalut is false)
       jqueryUrl?: string;
-      showMenu: "yes"|"no" (use boolean has bug in create-react-app)
+      showMenu: "yes"|"no" (use boolean has bug in create-react-app, default is yes, same as below)
+      showAudioButton: "yes"|"no"
+      showVideoButton: "yes"|"no"
+      showOfflineButton: "yes"|"no"
 
   ```
 ## api
