@@ -11,6 +11,9 @@ export interface JsxcProp {
     fullscreen?: boolean;
     jqueryUrl?: string;
     showMenu: "yes" | "no";
+    showAudioButton: "yes" | "no";
+    showVideoButton: "yes" | "no";
+    showOfflineButton: "yes" | "no";
 }
 export declare function directOpenChatWindow(jid: string): Promise<void>;
 export declare function Jsxc(prop: JsxcProp): import("react/jsx-runtime").JSX.Element;
