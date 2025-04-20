@@ -4,7 +4,7 @@
   "main": "./dist/jsxc-react-hook.js",
   "description": " This is a react function version for JSXC. So you can use it in react application.",
   "keywords": "jsxc xmpp react-hooks ",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "respository": "https://github.com/narutogo/jsxc-react-hook",
   "type": "module",
   "types": "./dist/Jsxc.d.ts",
@@ -15,9 +15,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
+    "react": "^19.1.0",
     "react-activation": "^0.12.4",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.1.0",
     "vite-plugin-libcss": "^1.1.1"
   },
   "devDependencies": {
